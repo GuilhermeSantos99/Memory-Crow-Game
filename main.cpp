@@ -1,21 +1,19 @@
 #include <crow.h>
-#include <crow/mustache.h>
+#include <crow/app.h>
 
-int main(){
+int main() {
 
     crow::SimpleApp app;
-
     CROW_ROUTE(app, "/")([](){
-        auto index = crow::mustache::load("index.html");
+        auto index = crow::mustache::load_text("index.html");
         return index;
     });
+    app.port(18080).multithreaded().run();
 
     CROW_ROUTE(app, "/game")([](){
-        auto game = crow::mustache::load("game.html");
+        auto game = crow::mustache::load_text("game.html");
         return game;
     });
-
-    app.port(18080).multithreaded().run();
-    
-    return 0;
+      
+      return 0;
 }
