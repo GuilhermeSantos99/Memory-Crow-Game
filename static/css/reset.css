@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Adventure Time';
+    src: url('../fonts/Adventure Time Logo.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    border: none;
+    font-family: 'Adventure Time';
+}
+
